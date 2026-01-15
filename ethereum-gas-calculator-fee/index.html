@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereum Transaction Fee Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <header class="header">
+      <h1>Ethereum Gas Fee Calculator</h1>
+      <button id="themeToggle" aria-label="Toggle dark mode">
+        🌙
+      </button>
+    </header>
+
+    <main class="card">
+      <div class="input-group">
+        <label>Gas Price (Gwei)</label>
+        <input type="number" id="gasPrice" placeholder="e.g. 30" />
+      </div>
+
+      <div class="input-group">
+        <label>Gas Limit</label>
+        <input type="number" id="gasLimit" placeholder="e.g. 21000" />
+      </div>
+
+      <div class="preset-buttons">
+        <button onclick="setGasLimit(21000)">Send ETH</button>
+        <button onclick="setGasLimit(150000)">Swap Token</button>
+      </div>
+
+      <div class="input-group">
+        <label>ETH Price (USD)</label>
+        <input type="number" id="ethPrice" placeholder="Fetching price..." />
+      </div>
+
+      <button class="calculate-btn" onclick="calculateFee()">
+        Calculate Fee
+      </button>
+
+      <div class="result" id="output"></div>
+    </main>
+  </div>
+
+  <script src="app.js"> </script>
+</body>
+</html>
